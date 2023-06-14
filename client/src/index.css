@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: rgba(2, 2, 2, 0.837);
+    font-family: 'Khula';
+}

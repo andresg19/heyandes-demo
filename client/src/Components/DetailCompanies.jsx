@@ -24,7 +24,7 @@ const DetailCompanies = () => {
         <header>
         <Nav handle={handleDispatch}/>
          </header>
-         <section className='mt-10 w-[90%] mx-auto'>
+         <section className='mt-8 mb-2 w-[90%] mx-auto'>
              <TableDetail data={data}/>
          </section>
      </main>

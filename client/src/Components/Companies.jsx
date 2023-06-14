@@ -26,7 +26,7 @@ const Companies = () => {
             <article>
                 <DataBoxes sales={sales} data={agencies} />
             </article>
-            <section className='mt-10 w-[90%] mx-auto'>
+            <section className='mt-8 mb-2 w-[90%] mx-auto'>
                 <TableCompanies data={agencies}/>
             </section>
         </main>

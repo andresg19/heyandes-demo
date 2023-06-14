@@ -29,13 +29,14 @@ function mode(arr) {
 }
  console.log(company)
     return ( 
-        <section className='flex justify-around mt-10 w-[60%] mx-auto'>
-            <div>
-                <h1>
+        <section className='flex mt-10 w-[60%] m-auto text-center bg-[#191919a2] shadow-sm shadow-black rounded-sm lg:text-center'>
+            <div className="mx-auto">
+                <h1 className="underline text-[16px] text-slate-500">
                     {company && company.nameAgency}
                 </h1>
+                <h2 className="text-[14px] text-slate-500 ">${company && company.total}</h2>
             </div>
-            <div>
+            <div className="m-auto text-[14px] text-slate-500">
                 <h1>{repeatDate && repeatDate}</h1>
             </div>
         </section>
