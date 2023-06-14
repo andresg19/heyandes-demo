@@ -31,7 +31,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 objExist.total += object.finalPrice;
                 objExist.comission = objExist.total * 0.025;
             }
-            
+      
             return {
                 ...state,
                 sales: payload,

@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filterCompanies, getSales } from '../Redux/Actions/actions';
 import TableCompanies from './TableCompanies';
 import Nav from './Nav';
+import DataBoxes from './DataBoxes';
 
 const Companies = () => {
     const agencies = useSelector((state) => state.dataCompanies);
+    const sales = useSelector((state) => state.sales);
     const dispatch = useDispatch();
    
     useEffect(() => {
@@ -21,6 +23,9 @@ const Companies = () => {
            <header>
             <Nav handle={handleDispatch} />
             </header>
+            <article>
+                <DataBoxes sales={sales} data={agencies} />
+            </article>
             <section className='mt-10 w-[90%] mx-auto'>
                 <TableCompanies data={agencies}/>
             </section>
