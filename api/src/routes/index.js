@@ -3,8 +3,8 @@ const { Router } = require("express");
 
 const router = Router();
 
-const get = require('./get');
+const sales = require('./sales');
 
-router.use('/', get)
+router.use('/', sales);
 
 module.exports = router;
