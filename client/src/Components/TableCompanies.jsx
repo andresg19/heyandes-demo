@@ -4,24 +4,24 @@ import { Link } from 'react-router-dom';
 const TableCompanies = ({ data }) => {
     console.log(data)
   return (
-    <table>
+    <table className='mx-auto w-full'>
       <thead>
-        <tr>
-          <th>Company</th>
-          <th>Total</th>
-          <th>Comission</th>
-          <th>Detail</th>
+        <tr className='border divide-y divide-gray-200 text-center'>
+          <th className='p-4'>Company</th>
+          <th className='p-4'>Total</th>
+          <th className='p-4'>Comission</th>
+          <th className='p-4'>Detail</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody divide-y divide-gray-200>
         {data && data.map((item, index) => (
-          <tr key={index}>
-            <td>{item.nameAgency}</td>
-            <td>{item.total}</td>
-            <td>{item.comission}</td>
-            <button >
+          <tr className='hover:bg-gray-100 text-center' key={index}>
+            <td className='p-4'>{item.nameAgency}</td>
+            <td className='p-4'>{item.total}</td>
+            <td className='p-4'>{item.comission}</td>
+            <td className='p-4 underline text-[#2424a7]' >
                 <Link to={"/company/" + item.nameAgency}>Detail</Link>
-              </button>
+              </td>
           </tr>
         ))}
       </tbody>

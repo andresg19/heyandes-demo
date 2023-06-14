@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSales } from '../Redux/Actions/actions';
+import { filterCompanies, getSales } from '../Redux/Actions/actions';
 import TableCompanies from './TableCompanies';
+import Nav from './Nav';
 
 const Companies = () => {
     const agencies = useSelector((state) => state.dataCompanies);
@@ -10,14 +11,17 @@ const Companies = () => {
     useEffect(() => {
         dispatch(getSales())
     }, []);
+
+    const handleDispatch = (e) => {
+        e.preventDefault();
+        dispatch(filterCompanies(e.target.value))
+    }
     return ( 
         <main>
            <header>
-            <nav>
-                <h1>HeyAndes</h1>
-            </nav>
+            <Nav handle={handleDispatch} />
             </header>
-            <section>
+            <section className='mt-10 w-[90%] mx-auto'>
                 <TableCompanies data={agencies}/>
             </section>
         </main>

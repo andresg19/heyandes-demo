@@ -1,30 +1,31 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSales } from '../Redux/Actions/actions';
+import { dataPerCompany, filterCompaniesDetail, getSales } from '../Redux/Actions/actions';
 import TableDetail from './TableDetail';
+import Nav from './Nav';
 
 
 const DetailCompanies = () => {
     const { name } = useParams();
-    const data = useSelector((state) => state.sales)
-    const filterDataPerCompany = data.filter((sales) => sales.nameAgency === name);
-    console.log(filterDataPerCompany)
+    const data = useSelector((state) => state.detail)
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getSales());
+        dispatch(dataPerCompany(name));
     }, []);
-    
+
+     const handleDispatch = (e) => {
+        e.preventDefault();
+        dispatch(filterCompaniesDetail(e.target.value))
+    }
     return ( 
         <main>
         <header>
-         <nav>
-             <h1>HeyAndes</h1>
-         </nav>
+        <Nav handle={handleDispatch}/>
          </header>
-         <section>
-             <TableDetail data={filterDataPerCompany}/>
+         <section className='mt-10 w-[90%] mx-auto'>
+             <TableDetail data={data}/>
          </section>
      </main>
      );
