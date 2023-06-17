@@ -2,13 +2,13 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 // Configura tu objeto de configuración de Firebase
 const firebaseConfig = {
-  apiKey: 'AIzaSyBy5tK3QMfWxmoWB3awnVOXckfs5mVm9ds',
-  authDomain: 'heyandesdemo.firebaseapp.com',
+  apiKey: `${import.meta.env.API_KEY}`,
+  authDomain: `${import.meta.env.DOMAIN}`,
   projectId: 'heyandesdemo',
-  storageBucket: "heyandesdemo.appspot.com",
-  messagingSenderId: "818242989224",
-  appId: "1:818242989224:web:0c372126d4d0390660a69d",
-  measurementId: "G-QYDD4F73D8"
+  storageBucket: `${import.meta.env.STORAGE}`,
+  messagingSenderId: `${import.meta.env.MESSAGE}`,
+  appId: `${import.meta.env.APP_ID}`,
+  measurementId: `${import.meta.env.MEASURE_ID}`,
 };
 
 

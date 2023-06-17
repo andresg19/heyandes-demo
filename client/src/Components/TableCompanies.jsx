@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const TableCompanies = ({ data }) => {
-    console.log(data)
   return (
     <table className='min-w-full  text-slate-300 shadow-sm shadow-[#000000]'>
       <thead>

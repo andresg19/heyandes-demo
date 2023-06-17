@@ -9,7 +9,7 @@ const DataBoxes = ({sales, data}) => {
 const dates = sales && sales.map(obj => obj.datePayment.split(" ")[0]);
 
 const repeatDate = mode(dates);
-console.log(repeatDate)
+
 
 function mode(arr) {
   const counter = {};
@@ -27,7 +27,6 @@ function mode(arr) {
 
   return mode;
 }
- console.log(company)
     return ( 
         <section className='flex mt-10 w-[60%] m-auto text-center bg-[#191919a2] shadow-sm shadow-black rounded-sm lg:text-center'>
             <div className="mx-auto">

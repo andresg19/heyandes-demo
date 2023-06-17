@@ -45,7 +45,6 @@ export default function rootReducer(state = initialState, { type, payload }) {
                 detail: [...result]
               }
             case FILTER_COMPANIES: 
-            console.log('payload filter', payload)
 
             let sort = 
             payload === 'alphabetically' ?
@@ -79,11 +78,9 @@ export default function rootReducer(state = initialState, { type, payload }) {
             }
 
             case FILTER_COMPANIES_DETAIL: 
-            console.log('entre', payload)
             let sortDetail = 
             payload === 'alphabetically' ?
             state.detail.sort(function (a, b) {
-                // console.log(a, b)
                 if (a.name > b.name) {
                   return 1;
                 }
@@ -95,7 +92,6 @@ export default function rootReducer(state = initialState, { type, payload }) {
               :
               payload === 'value' ?
               state.detail.sort(function (a, b) {
-                // console.log(a, b)
                 if (a.finalPrice > b.finalPrice) {
                   return -1;
                 }
