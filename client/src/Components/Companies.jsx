@@ -4,6 +4,7 @@ import { filterCompanies, getSales } from '../Redux/Actions/actions';
 import TableCompanies from './TableCompanies';
 import Nav from './Nav';
 import DataBoxes from './DataBoxes';
+import PieCharts from './pieCharts';
 
 const Companies = () => {
     const agencies = useSelector((state) => state.dataCompanies);
@@ -29,6 +30,7 @@ const Companies = () => {
             <section className='mt-8 mb-2 w-[90%] mx-auto'>
                 <TableCompanies data={agencies}/>
             </section>
+                <PieCharts data={agencies}/>
         </main>
      );
 }
