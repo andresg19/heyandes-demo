@@ -13,7 +13,6 @@ const PieCharts = ({ data }) => {
     });
 
   const sumTotal = totales.reduce((acc, curr) => acc + curr, 0);
-  console.log("TOTAAAAAL", sumTotal);
 
   data &&
     data.map((comp) => {

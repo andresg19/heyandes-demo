@@ -67,7 +67,6 @@ const BarCharts = ({ data }) => {
     };
   });
 
-  console.log(finalData);
 
   return (
     <ResponsiveContainer width="100%" height={300}>
