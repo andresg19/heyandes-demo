@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BarChart,
   ResponsiveContainer,
@@ -29,17 +29,34 @@ const dataBar = [
 ];
 
 const BarCharts = ({ data }) => {
+
+  useEffect(() => {
+    return () => {
+      resetDataBar();
+    };
+  }, []);
+
+  const resetDataBar = () => {
+    dataBar.forEach((item) => {
+      item.totalFinalPrice = 0;
+    });
+  };
+      
   data &&
     data.forEach(function (objeto) {
       var fecha = new Date(objeto.day);
       var mes = fecha.getMonth();
       var finalPrice = objeto.finalPrice;
 
-      if (dataBar.hasOwnProperty(mes)) {
-        if (!dataBar[mes].hasOwnProperty("totalFinalPrice")) {
-          dataBar[mes].totalFinalPrice = 0;
-        }
+      if (dataBar[mes] && dataBar[mes].hasOwnProperty("totalFinalPrice")) {
         dataBar[mes].totalFinalPrice += finalPrice;
+      } else if (dataBar[mes]) {
+        dataBar[mes].totalFinalPrice = finalPrice;
+      } else {
+        dataBar[mes] = {
+          month: mes,
+          totalFinalPrice: finalPrice,
+        };
       }
     });
 
@@ -50,7 +67,7 @@ const BarCharts = ({ data }) => {
     };
   });
 
-  console.log(finalData)
+  console.log(finalData);
 
   return (
     <ResponsiveContainer width="100%" height={300}>

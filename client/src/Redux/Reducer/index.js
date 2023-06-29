@@ -3,7 +3,7 @@ import { GET_DATA, FILTER_COMPANIES, FILTER_COMPANIES_DETAIL, DATA_PER_COMPANY, 
 const initialState = {
     sales: [],
     dataCompanies: null,
-    detail: [],
+    detail: null,
     filterCompanies: [],
 };
 
@@ -111,7 +111,7 @@ export default function rootReducer(state = initialState, { type, payload }) {
             case CLEAR_STATE: 
             return {
               ...state,
-              detail: []
+              detail: null
             }
         default:
             return state;
