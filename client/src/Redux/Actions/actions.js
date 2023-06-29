@@ -1,4 +1,4 @@
-import { DATA_PER_COMPANY, FILTER_COMPANIES, FILTER_COMPANIES_DETAIL, GET_DATA } from "../Actions/actionTypes";
+import { CLEAR_STATE, DATA_PER_COMPANY, FILTER_COMPANIES, FILTER_COMPANIES_DETAIL, GET_DATA } from "../Actions/actionTypes";
 import  db  from "../../../firebase"
 
 export const getSales = () => {
@@ -49,6 +49,18 @@ export const getSales = () => {
         return dispatch({
           type: DATA_PER_COMPANY,
           payload: companyName,
+        })
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
+  export const clearState = () => {
+    return async function (dispatch) {
+      try {
+        return dispatch({
+          type: CLEAR_STATE,
         })
       } catch (error) {
         console.log(error);

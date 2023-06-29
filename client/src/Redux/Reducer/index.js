@@ -1,9 +1,9 @@
-import { GET_DATA, FILTER_COMPANIES, FILTER_COMPANIES_DETAIL, DATA_PER_COMPANY } from "../Actions/actionTypes";
+import { GET_DATA, FILTER_COMPANIES, FILTER_COMPANIES_DETAIL, DATA_PER_COMPANY, CLEAR_STATE } from "../Actions/actionTypes";
 
 const initialState = {
     sales: [],
     dataCompanies: null,
-    detail: null,
+    detail: [],
     filterCompanies: [],
 };
 
@@ -107,6 +107,11 @@ export default function rootReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 detail: [...sortDetail],
+            }
+            case CLEAR_STATE: 
+            return {
+              ...state,
+              detail: []
             }
         default:
             return state;
