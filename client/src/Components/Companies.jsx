@@ -4,7 +4,7 @@ import { filterCompanies, getSales } from '../Redux/Actions/actions';
 import TableCompanies from './TableCompanies';
 import Nav from './Nav';
 import DataBoxes from './DataBoxes';
-import PieCharts from './pieCharts';
+import PieCharts from './PieCharts';
 
 const Companies = () => {
     const agencies = useSelector((state) => state.dataCompanies);
